@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Ephesis&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Imperial+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+section{
+    background-color: rgb(233, 231, 231);
+}
+body{
+    font-weight: 300;
+    font-family: "Roboto", sans-serif;
+}
+.container{
+    /*background-image: url("./img/UNLA-Fondo-2.gif");*/
+    background-color: black;
+    animation: moveBackground 10s linear infinite;
+}
+.row-container{
+    border: solid 5px #885112;
+    border-radius: 5px;
+    text-align: center;
+}
+.label-container{
+    color: #CDAF8E;
+}
+.input-name-container input{
+    background-color: rgba(244, 244, 244, 0.86);
+    border: none;
+    border-bottom: solid 4px #885112;
+    border-radius: 2px;
+    font-size: 16px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+}
+.button-form-container input{
+    background-color: #885112;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #CDAF8E;
+    font-family: "Roboto", sans-serif;
+}

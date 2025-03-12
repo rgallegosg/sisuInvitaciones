@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Importar useNavigate
+import { useNavigate } from "react-router-dom";
 import './loginForm.style.css';
 import logoEvent  from "./UNLA-Logo.png";
 import dateImage  from "./UNLA-Fecha.png";
+
 export const LoginForm = () => {
     const fullUrl = window.location.pathname;
     const parts = fullUrl.split('/');
     const extractEventName = parts[parts.length - 1];
+    
     const [formData, setFormData] = useState({
         eventName: extractEventName,
         guestName: '',
@@ -21,9 +23,13 @@ export const LoginForm = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {        
+        e.preventDefault();
+        
+        
         try {
-            console.log("Enviando datos al servidor:", formData); // Verificar los datos que se envían
+
+            console.log("Enviando datos al servidor:", formData); 
 
             const response = await fetch('http://localhost:3001/login', {
                 method: 'POST',
@@ -40,17 +46,17 @@ export const LoginForm = () => {
             }
 
             const data = await response.json();
-            console.log("Respuesta del servidor (JSON):", data); // Verificar la respuesta en formato JSON
+            //console.log("Respuesta del servidor (JSON):", data); // Verificar la respuesta en formato JSON
 
             if (data.response === "ok") {
-                setApiResponse(data); // Guardar la respuesta en el estado
-                navigate("/");
+                setApiResponse(data);
+                navigate("../graduacion-UNLA-Invitacion");
             } else {
-                alert(data.message); // Mostrar alerta si hay un error
+                alert(data.message)
             }
         } catch (error) {
-            console.error('Error al enviar el formulario:', error); // Verificar errores
-            alert("Error de conexión con el servidor"); // Mostrar alerta si hay un error de red
+            console.error('Error al enviar el formulario:', error);
+            alert("Error de conexión con el servidor");
         }
     };
 
@@ -74,7 +80,7 @@ export const LoginForm = () => {
                                 <input type="text" name="guestName" id="guestName" placeholder="Ingresa tu nombre" onChange={handleChangeLoginForm} required />
                             </div>
                             <div className="button-form-container">
-                                <input type="submit" value="Ingresar" onSubmit={handleSubmit} /> 
+                                <input type="submit" value="Ingresar" /> 
                             </div>
                         </form>
                     </div>
