@@ -1,4 +1,3 @@
-from django.contrib.auth import login, authenticate
 from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import status
 from rest_framework.decorators import api_view
@@ -91,14 +90,14 @@ def get_guest_by_event(request, event_name_id):
         guest = Guest.objects.get(event=event, name=guest_name)
         serializer = GuestSerializer(guest)
         response_data = serializer.data
-        response_data['status'] = '200'
+        response_data['response'] = 'ok'
     except Guest.DoesNotExist:
         response_data = {
             'name': '',
             'invitations': '',
             'extraGuests':'',
             'assists':'',
-            'status': 'Nombre de invitado mal escrito'
+            'response': '404'
         }
 
     return Response(response_data, status=status.HTTP_200_OK)
