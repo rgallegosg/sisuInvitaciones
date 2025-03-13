@@ -1,11 +1,16 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import XVSofia from './routes/xvSofia/xvSofia.component';
+import GraduacionUNLA from './routes/graduacionUNLA/graduacionUNLA.component.jsx';
+import GraduacionesUNLAInvitacion from './routes/graduacionUNLA/graduacionesUNLA-Invitacion.jsx';
+
 function App() {
+  
   return (
       <Router>
         <Routes>
-          <Route path='xvsofia' element={<XVSofia />}/>
+          <Route path='graduacion-unla' element={<GraduacionUNLA />}/>
+          <Route path='graduacion-UNLA-Invitacion' element={<GraduacionesUNLAInvitacion />}/>
+          
         </Routes>
       </Router>
     
