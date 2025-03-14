@@ -8,8 +8,8 @@ function App() {
   return (
       <Router>
         <Routes>
-          <Route path='graduacion-unla' element={<GraduacionUNLA />}/>
-          <Route path='graduacion-UNLA-Invitacion' element={<GraduacionesUNLAInvitacion />}/>
+          <Route path='graduacion-unla/login' element={<GraduacionUNLA />}/>
+          <Route path='graduacion-unla' element={<GraduacionesUNLAInvitacion />}/>
           
         </Routes>
       </Router>
