@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './loginForm.style.css';
-import logoEvent  from "./UNLA-Logo.png";
-import dateImage  from "./UNLA-Fecha.png";
 
-export const LoginForm = () => {
-    const fullUrl = window.location.pathname;
+export const LoginForm = (props) => {
+
+    const { redirectURL, eventLogo, eventFecha, eventName } = props.loginData;
+
+    /*const fullUrl = window.location.pathname;
     const parts = fullUrl.split('/');
-    const extractEventName = parts[parts.length - 1];
+    const extractEventName = parts[parts.length - 1];*/
     
     const [formData, setFormData] = useState({
-        eventName: extractEventName,
+        eventName: eventName,
         guestName: '',
     });
     const [apiResponse, setApiResponse] = useState(null);
-    const navigate = useNavigate(); // Inicializar useNavigate
+    const navigate = useNavigate();
 
     const handleChangeLoginForm = (e) => {
         setFormData({
@@ -24,13 +25,9 @@ export const LoginForm = () => {
     };
 
     const handleSubmit = async (e) => {        
-        e.preventDefault();
-        
-        
+        e.preventDefault(); 
         try {
-
-            console.log("Enviando datos al servidor:", formData); 
-
+            //console.log("Enviando datos al servidor:", formData); 
             const response = await fetch(`http://127.0.0.1:8000/api/events/${formData.eventName}?eventName=${formData.eventName}&guestName=${formData.guestName}`, {
                 method: 'POST',
                 headers: {
@@ -38,19 +35,15 @@ export const LoginForm = () => {
                 },
                 body: JSON.stringify(formData),
             });
-
-            console.log("Respuesta recibida del servidor (cruda):", response); // Verificar la respuesta cruda
-
+            //console.log("Respuesta recibida del servidor (cruda):", response); 
             if (!response.ok) {
                 throw new Error(`Error en la respuesta del servidor: ${response.statusText}`);
             }
-
             const data = await response.json();
             //console.log("Respuesta del servidor (JSON):", data); // Verificar la respuesta en formato JSON
-
             if (data.response === "ok") {
                 setApiResponse(data);
-                navigate("../graduacion-UNLA-Invitacion");
+                navigate(redirectURL);
             } else {
                 alert(data.message)
             }
@@ -65,10 +58,10 @@ export const LoginForm = () => {
             <div className="container">
                 <div className="row-container">
                     <div className="invite-logo-container">
-                        <img src={logoEvent} alt="" />
+                        <img src={eventLogo} alt="" />
                     </div>
                     <div className="invite-date-container">
-                        <img src={dateImage} alt="" />
+                        <img src={eventFecha} alt="" />
                     </div>
                     <div className="form-container">
                         <form onSubmit={handleSubmit}>
