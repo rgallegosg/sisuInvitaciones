@@ -1,0 +1,27 @@
+.logo-event-container{
+    position: absolute;
+    width: 65%;
+    top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-event-container img{
+    width: 190px;
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+    .logo-event-container{
+        top: 130px;
+        width: 100%;
+    }
+    .logo-event-container img{
+        width: 150px;
+    }
+}

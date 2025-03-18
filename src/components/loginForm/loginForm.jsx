@@ -15,6 +15,7 @@ export const LoginForm = (props) => {
         guestName: '',
     });
     const [apiResponse, setApiResponse] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado de autenticación
     const navigate = useNavigate();
 
     const handleChangeLoginForm = (e) => {
@@ -42,8 +43,18 @@ export const LoginForm = (props) => {
             const data = await response.json();
             //console.log("Respuesta del servidor (JSON):", data); // Verificar la respuesta en formato JSON
             if (data.response === "ok") {
+                console.log('the data is:::>'+JSON.stringify(data));
+                
                 setApiResponse(data);
-                navigate(redirectURL);
+                setIsAuthenticated(true);
+                navigate(redirectURL, {
+                    state: {
+                        guestName : data.name,
+                        guestInvitations: data.invitations,
+                        extraGuest: data.extraGuests,
+                        guestAssists: data.assists
+                    }
+                });
             } else {
                 alert(data.message)
             }

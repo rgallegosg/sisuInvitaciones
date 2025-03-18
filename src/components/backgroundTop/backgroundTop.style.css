@@ -1,0 +1,26 @@
+
+.container-background-top{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.background-top{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+    .background-top{
+        width: 600px;
+    }
+}

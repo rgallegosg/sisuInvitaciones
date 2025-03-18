@@ -1,0 +1,63 @@
+.phrases-container{
+    position: absolute;
+    top: 950px;
+    width: 65%;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+.phrase1-container{
+    font-family: 'Apple-Chancery', sans-serif;
+    font-size: 25px;
+    margin-top: 20px;
+    padding: 0px 15px 0px 15px;
+}
+.phrase1-container p{
+    margin: 0px;
+}
+.author1-container{
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 20px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    padding: 0px 15px 0px 15px;
+}
+.author1-container p{
+    margin: 0px;
+}
+.phrase2-container{
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    padding: 0px 15px 0px 15px;
+}
+.phrase2-container p{
+    margin: 0px;
+}
+.phrase3-container{
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    padding: 0px 15px 0px 15px;
+}
+.phrase3-container p{
+    margin: 0px;
+}
+
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+    .phrases-container{
+        top: 950px;
+        width: 100%;
+    }
+}
