@@ -1,38 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Ephesis&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Imperial+Script&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --primario: #885112;
+    --secundario: #CDAF8E;
+    --black: black;
+}
+/*body { background-color: var(--blue); }*/
 section{
     background-color: rgb(233, 231, 231);
 }
 body{
     font-weight: 300;
     font-family: "Roboto", sans-serif;
+    background-color: var(--black);
 }
 .container{
     /*background-image: url("./img/UNLA-Fondo-2.gif");*/
-    background-color: black;
+    background-color: var(--black);
     animation: moveBackground 10s linear infinite;
 }
 .row-container{
-    border: solid 5px #885112;
+    border: solid 5px var(--primario);
     border-radius: 5px;
     text-align: center;
 }
 .label-container{
-    color: #CDAF8E;
+    color: var(--secundario);
 }
 .input-name-container input{
     background-color: rgba(244, 244, 244, 0.86);
     border: none;
-    border-bottom: solid 4px #885112;
+    border-bottom: solid 4px var(--primario);
     border-radius: 2px;
     font-size: 16px;
-    color: black;
+    color: var(--black);
     font-family: "Roboto", sans-serif;
 }
 .button-form-container input{
-    background-color: #885112;
+    background-color: var(--primario);
     border: none;
     font-size: 16px;
     border-radius: 5px;
-    color: #CDAF8E;
+    color: var(--secundario);
     font-family: "Roboto", sans-serif;
 }
+

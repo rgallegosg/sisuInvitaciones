@@ -1,0 +1,78 @@
+@import url("https://use.typekit.net/zie2xkm.css");
+
+.background-top{
+    background-image: url('../../assets/img/drIgnacioChavez/cabecera.png');
+    background-color: var(--black);
+}
+
+.invitacion-main-container{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.invitacion-container{
+    width: 65%;
+}
+
+/*Start Location style*/
+.religion-ceremony-location-main-container{
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 65%;
+    top: 1185px;
+}
+.reception-location-main-container{
+    position: absolute;
+    text-align: center;
+    color: white;
+    width: 65%;
+    top: 2130px;
+}
+.title-container{
+    font-family: "source-serif-4-variable", sans-serif;
+    font-size: 30px;
+}
+
+.spot-container{
+    padding: 0px 15px;
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 25px;
+}
+.schedule-container{
+    padding: 0px 15px;
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 25px;
+}
+.addres-container{
+    padding: 0px 15px;
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 25px;
+}
+/*End Location style*/
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+    .invitacion-container{
+        width: 100%;
+    }
+    /*Start Location style*/
+    .religion-ceremony-location-main-container{
+        width: 100%;
+        top: 1300px;
+    }
+    .reception-location-main-container{
+        width: 100%;
+        top: 2260px;
+    }
+    /*End Location style*/
+}
