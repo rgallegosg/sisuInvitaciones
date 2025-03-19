@@ -14,8 +14,8 @@ body{
     background-color: var(--black);
 }
 .container{
-    /*background-image: url("./img/UNLA-Fondo-2.gif");*/
-    background-color: var(--black);
+    background-image: url("https://sisuinvitaciones.com/backup/UNLA-Fondo-2.gif");
+   
     animation: moveBackground 10s linear infinite;
 }
 .row-container{
