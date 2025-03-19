@@ -24,13 +24,15 @@
     color: white;
     width: 65%;
     top: 1185px;
+    animation: fadeIn 5s;
 }
 .reception-location-main-container{
     position: absolute;
     text-align: center;
     color: white;
     width: 65%;
-    top: 2130px;
+    top: 2150px;
+    animation: fadeIn 5s;
 }
 .title-container{
     font-family: "source-serif-4-variable", sans-serif;
@@ -55,6 +57,12 @@
     font-variation-settings: "opsz" 40, "wght" 450;
     font-size: 25px;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /*End Location style*/
 @media only screen and (min-width: 576px) and (max-width: 767px){
 
@@ -68,11 +76,11 @@
     /*Start Location style*/
     .religion-ceremony-location-main-container{
         width: 100%;
-        top: 1300px;
+        top: 1350px;
     }
     .reception-location-main-container{
         width: 100%;
-        top: 2260px;
+        top: 2450px !important;
     }
     /*End Location style*/
 }

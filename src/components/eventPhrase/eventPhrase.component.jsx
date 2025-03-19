@@ -3,7 +3,7 @@ import './eventPhrase.style.css';
 
 const EventPhrase = (props) => {
     const { styleType, phrase1, author1, phrase2, phrase3 } = props.phraseData;
-    if(styleType == 1){
+    if(styleType === 1){
         return (
             <div className="phrases-container">
                 <div className="phrase1-container">

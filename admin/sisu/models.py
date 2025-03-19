@@ -9,10 +9,10 @@ HOST_URL_DOMAIN = ''
 class Event(models.Model):
     name = models.CharField(max_length=300)
     date = models.DateTimeField()
-    place = models.CharField(max_length=300, default='')
+    place = models.CharField(max_length=300, default='', blank=True)
     event_name_id = models.CharField(max_length=300, blank=True, editable=False)
-    host_link_invitation = models.CharField(max_length=300, default='')
-    invitation_link = models.CharField(max_length=300, default='')
+    host_link_invitation = models.CharField(max_length=300, default='', blank=True)
+    invitation_link = models.CharField(max_length=300, default='', blank=True)
 
     def save(self, *args, **kwargs):
         #Save the object to get and ID if it doesn't have one
@@ -34,8 +34,9 @@ class Guest(models.Model):
     invitations = models.IntegerField(default=0)
     cellphone = models.CharField(max_length=100)
     assists = models.BooleanField(default=False)
-    extraGuests = models.CharField(max_length=300, default='')
+    extraGuests = models.CharField(max_length=300, default='', blank=True)
     event = models.ForeignKey(Event, related_name='guests', on_delete=models.CASCADE, default='')
+    table_number = models.IntegerField(default=0)
     creation_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
