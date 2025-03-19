@@ -4,7 +4,7 @@ import './eventLocation.style.css';
 const EventLocation = (props) => {
 
     const { styleType, icon, title, lugar, hora, iconLocation, direccion, fotoLugar, urlRedirect } = props.locationData;
-    if(styleType == 1){
+    if(styleType === 1){
         return (
             <div>
                 <div className="icon-container">

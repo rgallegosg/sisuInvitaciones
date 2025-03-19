@@ -14,6 +14,7 @@ import IconReception from '../../assets/icons/iconReception1.png';
 import PinLocation from '../../assets/icons/pinLocation1.png';
 import ImgIglesia from '../../assets/img/graduacionMichoacanaMedicina09/parroquiaFatima.jpg';
 import ImgRecepcion from '../../assets/img/graduacionMichoacanaMedicina09/miradorAltozano.jpg';
+import Countdown from "../../components/countdown/countdown.component";
 
 const GraduacionesUNLAInvitacion = () => {
     const location = useLocation();
@@ -30,16 +31,16 @@ const GraduacionesUNLAInvitacion = () => {
     if (!location.state) {
         return null; // No muestra nada mientras se redirige
     }
-    
+
     const titleData = {
-        styleType : 1,
-        title : 'Facultad de Medicina',
+        styleType: 1,
+        title: 'Facultad de Medicina',
         subTitle: 'Dr. Ignacio Chávez',
-        imgTitle:  TitleImg
+        imgTitle: TitleImg
     }
     const phraseData = {
-        styleType : 1,
-        phrase1 : '“La medicina es una ciencia de la incertidumbre y un arte de la probabilidad.”',
+        styleType: 1,
+        phrase1: '“La medicina es una ciencia de la incertidumbre y un arte de la probabilidad.”',
         author1: '-William Osler',
         phrase2: 'Después de años de esfuerzo, desvelos y aprendizaje, ha llegado el momento de festejar nuestra graduación.',
         phrase3: 'Te invitamos a compartir con nosotros una noche inolvidable llena de alegría, música y buenos momentos.'
@@ -72,47 +73,52 @@ const GraduacionesUNLAInvitacion = () => {
     };
 
     const graduadosList = ['Ailed Jocelyn Barriga Flores',
-                            'Ana Quetzalli Romero Hernández',
-                            'Andrea Natalie Flores Rubio',
-                            'Atziri Francisco Cruz',
-                            'Carolina Cendejas Tapia',
-                            'Cristopher Andree Sánchez Pimentel',
-                            'Daniela González Chávez',
-                            'Daniela Jiménez Pascual',
-                            'Dianne López Mercado',
-                            'Dulce María Madrigal Villegas',
-                            'Eros Karim Barajas Morales',
-                            'Hirepan Farid Toscano Villegas',
-                            'Joana Guadalupe Cuevas Benitez',
-                            'Jonathan Hilario Simón',
-                            'Jonathan Quiroz Castro',
-                            'Lizzete Iraís Paz Hernández',
-                            'María Fernanda López Nava',
-                            'Oscar Gustavo Carranza Maldonado',
-                            'Ruben Robles Hernández',
-                            'Sandra Estefania Mayo Hernández',
-                            'Sergio Aldair Reyes López',
-                            'Victor Kheri Solorio Ruiz',
-                            'Victoria Raya García',
-                            'Ximena Sánchez Pedraza'
-                        ];
+        'Ana Quetzalli Romero Hernández',
+        'Andrea Natalie Flores Rubio',
+        'Atziri Francisco Cruz',
+        'Carolina Cendejas Tapia',
+        'Cristopher Andree Sánchez Pimentel',
+        'Daniela González Chávez',
+        'Daniela Jiménez Pascual',
+        'Dianne López Mercado',
+        'Dulce María Madrigal Villegas',
+        'Eros Karim Barajas Morales',
+        'Hirepan Farid Toscano Villegas',
+        'Joana Guadalupe Cuevas Benitez',
+        'Jonathan Hilario Simón',
+        'Jonathan Quiroz Castro',
+        'Lizzete Iraís Paz Hernández',
+        'María Fernanda López Nava',
+        'Oscar Gustavo Carranza Maldonado',
+        'Ruben Robles Hernández',
+        'Sandra Estefania Mayo Hernández',
+        'Sergio Aldair Reyes López',
+        'Victor Kheri Solorio Ruiz',
+        'Victoria Raya García',
+        'Ximena Sánchez Pedraza'
+    ];
+
+    const dateData = {
+        date: 'March, 31, 2025'
+    };
+
     return (
-        
-        <div className= "invitacion-main-container">
+
+        <div className="invitacion-main-container">
             <div className="invitacion-container">
                 <BackgroundTop />
                 <EventLogo />
-                <EventTitle titleData={titleData}/>
-                <EventPhrase phraseData = {phraseData}/>
-
+                <EventTitle titleData={titleData} />
+                <Countdown dateData={dateData}/>
+                <EventPhrase phraseData={phraseData} />
                 <div className="religion-ceremony-location-main-container">
-                    <EventLocation locationData = {religionCeremony}/>
+                    <EventLocation locationData={religionCeremony} />
                 </div>
                 <div className="reception-location-main-container">
-                    <EventLocation locationData = {reception}/>
+                    <EventLocation locationData={reception} />
                 </div>
                 <div className="intinerary-main-container">
-                    <EventItinerary itineraryData={itineraryData}/>
+                    <EventItinerary itineraryData={itineraryData} />
                 </div>
             </div>
         </div>

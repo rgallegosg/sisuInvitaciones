@@ -5,6 +5,7 @@
     width: 65%;
     text-align: center;
     color: white;
+    animation: fadeIn 5s;
 }
 .title-container-1 h1{
     text-align: center;
@@ -24,6 +25,12 @@
 .img-title-container-1 img{
     width: 155px;
 }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px){
 
 }

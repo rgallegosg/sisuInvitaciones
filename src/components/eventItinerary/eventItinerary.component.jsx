@@ -4,7 +4,7 @@ import './eventItinerary.style.css';
 const EventItinerary = (props) => {
 
     const { styleType, itineraryImage} = props.itineraryData;
-    if(styleType == 1){
+    if(styleType === 1){
         return (
             <div>
                 <div className="intinerary-title-container">

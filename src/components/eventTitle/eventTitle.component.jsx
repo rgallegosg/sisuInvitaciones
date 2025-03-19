@@ -3,7 +3,7 @@ import './eventTitle.style.css';
 
 const EventTitle = (props) => {
     const {title, subTitle, imgTitle, styleType} = props.titleData;
-    if(styleType == 1){
+    if(styleType === 1){
         return (    
             <div className="elements-title-container-1">
                 <div className="title-container-1">

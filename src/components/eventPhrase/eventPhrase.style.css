@@ -5,6 +5,7 @@
     text-align: center;
     color: white;
     background-color: black;
+    animation: fadeIn 5s;
 }
 .phrase1-container{
     font-family: 'Apple-Chancery', sans-serif;
@@ -47,6 +48,11 @@
 }
 .phrase3-container p{
     margin: 0px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Tablets y phablets */
