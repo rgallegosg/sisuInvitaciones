@@ -11,14 +11,21 @@ from .models import Event, Guest, Host
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ('name', 'date', 'place', 'event_name_id', 'host_link_invitation','invitation_link','view_guests_link')
-    actions = ['generar_host_links']
+    actions = ['generar_host_links', 'generar_invitation_link']
 
     def generar_host_links(self, request, queryset):
         for obj in queryset:
-            obj.invitation_link = f"event/{obj.id}/login"
+            obj.host_link_invitation = f"http://127.0.0.1:8000/event/{obj.id}/login"
             obj.save()
-        self.message_user("Links creados para el anfitrion")
+            messages.success(request,"Links creados para el anfitrion")
     generar_host_links.short_description = "Link de Anfitrion"
+
+    def generar_invitation_link(self, request, queryset):
+        for obj in queryset:
+            obj.invitation_link = f"https://sisuinvitaciones.com/{obj.event_name_id}/login"
+            obj.save()
+            messages.success(request, "Links creados para la invitacion")
+    generar_invitation_link.short_description = "Link de invitacion"
 
     def view_guests_link(self, obj):
         return format_html('<a href="{}">Ver Invitados</a>', obj.get_guests_url())
