@@ -19,8 +19,10 @@ class Event(models.Model):
         if not self.name:
             super(Event, self).save(*args, **kwargs)
         self.event_name_id = f"{self.name.replace(' ', '').lower()}"
+        '''
         self.host_link_invitation = f"event/{self.id}/login"
         self.invitation_link = f"event/{self.event_name_id}"
+        '''
         super(Event, self).save(*args, **kwargs)
 
     def __str__(self):
