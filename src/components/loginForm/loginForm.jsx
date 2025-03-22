@@ -29,7 +29,7 @@ export const LoginForm = (props) => {
         e.preventDefault(); 
         try {
             //console.log("Enviando datos al servidor:", formData); 
-            const response = await fetch(`http://127.0.0.1:8000/api/events/${formData.eventName}?eventName=${formData.eventName}&guestName=${formData.guestName}`, {
+            const response = await fetch(`http://18.216.210.41:8000/api/events/${formData.eventName}?eventName=${formData.eventName}&guestName=${formData.guestName}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
