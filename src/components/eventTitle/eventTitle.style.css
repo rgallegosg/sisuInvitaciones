@@ -1,0 +1,45 @@
+.elements-title-container-1{
+    font-family: "source-serif-4-variable", sans-serif;
+    position: absolute;
+    top: 380px;
+    width: 65%;
+    text-align: center;
+    color: white;
+    animation: fadeIn 5s;
+}
+.title-container-1 h1{
+    text-align: center;
+    color: white;
+    margin: 0px;
+    font-size: 40px;
+}
+.sub-title-container-1 span{
+    font-family: "source-serif-4-variable", sans-serif;
+    font-variation-settings: "opsz" 40, "wght" 450;
+    font-size: 35px;
+}
+.img-title-container-1{
+    width: 100%;
+    margin-top: 25px;
+}
+.img-title-container-1 img{
+    width: 155px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+}
+
+/* Teléfonos */
+@media only screen and (max-width: 575px){
+    
+    .elements-title-container-1{
+        top: 320px;
+        width: 100%;
+    }
+}
